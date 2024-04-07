@@ -1,32 +1,27 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
-
 import { defineConfig, squooshImageService } from 'astro/config';
-
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
-
 import astrowind from './src/integration';
-
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter.mjs';
-
+import {
+  readingTimeRemarkPlugin,
+  responsiveTablesRehypePlugin,
+  lazyImagesRehypePlugin,
+} from './src/utils/frontmatter.mjs';
+import solidJs from '@astrojs/solid-js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
 const hasExternalScripts = false;
 const whenExternalScripts = (items = []) =>
-  hasExternalScripts
-    ? Array.isArray(items)
-      ? items.map((item) => item())
-      : [items()]
-    : [];
+  hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
+// https://astro.build/config
 export default defineConfig({
   output: 'static',
-
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -49,13 +44,13 @@ export default defineConfig({
         ],
       },
     }),
-
     ...whenExternalScripts(() =>
       partytown({
-        config: { forward: ['dataLayer.push'] },
+        config: {
+          forward: ['dataLayer.push'],
+        },
       })
     ),
-
     compress({
       CSS: true,
       HTML: {
@@ -68,19 +63,16 @@ export default defineConfig({
       SVG: false,
       Logger: 1,
     }),
-
     astrowind(),
+    solidJs(),
   ],
-
   image: {
     service: squooshImageService(),
   },
-
   markdown: {
     remarkPlugins: [readingTimeRemarkPlugin],
     rehypePlugins: [responsiveTablesRehypePlugin, lazyImagesRehypePlugin],
   },
-
   vite: {
     resolve: {
       alias: {
