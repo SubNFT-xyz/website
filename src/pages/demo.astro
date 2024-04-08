@@ -1,0 +1,12 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import DemoView from '~/components/demo/DemoView';
+
+const metadata = {
+  title: 'Demo Page',
+};
+---
+
+<Layout metadata={metadata}>
+  <DemoView client:load />
+</Layout>

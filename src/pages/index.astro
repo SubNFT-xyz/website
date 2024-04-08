@@ -5,6 +5,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'SubTrade — Perfect solution for creating subscription-based app in web3',
@@ -25,8 +26,7 @@ const metadata = {
         target: '_blank',
         icon: 'tabler:mail-forward',
       },
-      // TODO: demo page
-      { text: 'Try the Demo', href: '#features' },
+      { text: 'Try the Demo', href: getPermalink('/demo') },
     ]}
   >
     <Fragment slot="title">

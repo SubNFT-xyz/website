@@ -111,7 +111,7 @@ export const headerData = {
       ],
     },
   ],
-  actions: [{ text: 'Try the Demo', href: '#', target: '_blank' }],
+  actions: [{ text: 'Try the Demo', href: getPermalink('/demo'), target: '_blank' }],
 };
 
 export const footerData = {
