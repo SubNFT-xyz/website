@@ -1,6 +1,5 @@
 # 🚀 SubTrade
 
-
 **SubTrade** is a platform that turns subscriptions into tradable tokens using blockchain and NFTs, allowing users to buy, sell, or swap them in a marketplace. This offers new revenue opportunities for companies and more choices for consumers.
 
 - ✅ **Ease of Integration** Make it easy to sell services by tokenizing subscriptions, connecting you with the cryptocurrency market for new income opportunities.
@@ -10,8 +9,7 @@
 
 <br>
 
-<img src="src/assets/images/default1.png" align="right"
-     alt="SubTrade Screenshot" width="1285" height="855">
+<img src="src/assets/images/default1.png" alt="SubTrade Screenshot" >
 
 🌟 _Perfect Solution for creating subscription-based app in web3_. 🌟
 
