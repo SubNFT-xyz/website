@@ -61,24 +61,25 @@ function NFT() {
     setInitRemainPercent(1);
     setRemainPercent(1);
   };
+  const btnClassDependEnable = !enable ? 'pointer-events-none opacity-50' : '';
 
   return (
     <div className="flex flex-col justify-start items-center">
       {/* Operation panel */}
       <div className="flex flex-row items-center gap-2">
-        <Button onClick={toggleStart}>
+        <Button onClick={toggleStart} className={btnClassDependEnable}>
           {!running && <Play />}
           {running && <Pause />}
           <span className="ml-2">Time Machine</span>
         </Button>
       </div>
-      <span className="mt-4">Now: {dayjs(date).format('YYYY-MM-DD')}</span>
+      <span className="mt-4">Today: {dayjs(date).format('YYYY-MM-DD')}</span>
       {/* NFT Box */}
       <div className="flex flex-col mt-8">
         <Price>
           <Progress value={remainPercent * 100} className="w-[60%] mb-4" />
           <CardFooter className="flex flex-row justify-between w-[60%]">
-            <Button className={!enable ? 'pointer-events-none opacity-50' : ''} variant="outline">
+            <Button className={btnClassDependEnable} variant="outline">
               Resell
             </Button>
             <Button variant="outline" onClick={handleRenew}>
