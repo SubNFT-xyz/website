@@ -4,7 +4,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import Features from '~/components/widgets/Features.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -22,7 +22,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Join waitlist',
-        href: 'https://github.com/onwidget/astrowind',
+        href: getPermalink('/contact'),
         target: '_blank',
         icon: 'tabler:mail-forward',
       },
@@ -45,16 +45,16 @@ const metadata = {
 
   <!-- Features Widget *************** -->
 
-  <Features2
+  <Features
     id="features"
     tagline="Features"
-    title="What you get with SubTrade"
-    subtitle="Unlock the Simplicity and Potential of Crypto Commerce"
+    title=""
+    subtitle=""
     items={[
       {
         title: 'Ease of Access',
         description:
-          'SubTrade simplifies the process of selling your services. With just a few clicks, you can tokenize your subscriptions, opening up a whole new revenue stream that taps into the crypto-savvy audience.',
+          'Make it easy to sell services by tokenizing subscriptions, connecting you with the cryptocurrency market for new income opportunities.',
         icon: 'tabler:rocket',
       },
       {
@@ -66,24 +66,14 @@ const metadata = {
       {
         title: 'Flexibility for Users',
         description:
-          "Life changes and so do the needs of your subscribers. SubTrade introduces an unprecedented level of flexibility, allowing users to sell their subscriptions if they decide to quit before the next cycle. This not only benefits the current user but also lowers the barrier for new users to try your service.",
+          'Let users sell their subscriptions before they expire, making it easier for others to try the service.',
         icon: 'tabler:arrows-right-left',
       },
       {
         title: 'Global Reach',
         description:
-          "Break down geographical barriers and connect with customers worldwide. SubTrade's integration with cryptocurrency means you can expand your services globally without the complexities of traditional currency exchange rates or banking fees.",
+          'Reach global customers easily by using cryptocurrency, avoiding traditional currency exchange and banking fees.',
         icon: 'tabler:world-upload',
-      },
-      {
-        title: "",
-        description: "",
-        icon: "",
-      },
-      {
-        title: "",
-        description: "",
-        icon: "",
       },
     ]}
   />
@@ -91,40 +81,25 @@ const metadata = {
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that SubTrade offers and how it can elevate your product."
+    title=""
+    subtitle=""
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why SubTrade?',
+        title: 'OK, tell me what is SubTrade again?',
         description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+          'SubTrade is a platform that turns subscriptions into tradable tokens using blockchain and NFTs, allowing users to buy, sell, or swap them in a marketplace. This offers new revenue opportunities for companies and more choices for consumers.',
       },
       {
-        title: 'What do I need to start?',
+        title: 'How to verify if a user has access permission to my service?',
         description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+          'Use our API/SDK to check if a user owns a subscription NFT on the blockchain. If they do, they get access to your service. This keeps your user base exclusive to NFT holders.',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
+        title: 'What is the cost of using SubTrade?',
         description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+          "The service is free during the Early Access period. After that, prices will be set according to market feedback and the platform's value. We aim for clear, fair pricing that aligns with SubTrade's innovations.",
       },
     ]}
   />
@@ -143,12 +118,8 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">
-      Your Gateway to Subscription Innovation
-    </Fragment>
+    <Fragment slot="title"> Sign up for early access to SubTrade </Fragment>
 
-    <Fragment slot="subtitle">
-      Unlock exclusive early access and be among the pioneers to redefine the subscription landscape. Don't miss your chance to lead the way in subscription innovation.
-    </Fragment>
+    <!-- <Fragment slot="subtitle"> Get early access and lead subscription innovation. Don't miss out. </Fragment> -->
   </CallToAction>
 </Layout>
