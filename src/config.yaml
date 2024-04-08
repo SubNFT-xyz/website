@@ -1,5 +1,5 @@
 site:
-  name: SubNFT
+  name: SubTrade
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -82,16 +82,16 @@ ui:
         heading: rgb(0 0 0)
         muted: rgb(16 16 16 / 66%)
         bgPage: rgb(255 255 255)
-        primary: rgb(1 97 239)
-        secondary: rgb(1 84 207)
-        accent: rgb(109 40 217)
+        primary: '#EA580B'
+        secondary: '#f7931e'
+        accent: '#f7931e'
     dark:
       fonts: {}
       colors:
         default: rgb(229 236 246)
         heading: rgb(247, 248, 248)
         muted: rgb(229 236 246 / 66%)
-        bgPage: rgb(3 6 32)
-        primary: rgb(1 97 239)
-        secondary: rgb(1 84 207)
-        accent: rgb(109 40 217)
+        bgPage: rgb(0 0 0)
+        primary: '#EA580B'
+        secondary: '#f7931e'
+        accent: '#f7931e'

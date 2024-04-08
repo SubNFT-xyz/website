@@ -2,13 +2,12 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'SubNFT — Perfect solution for creating subscription-based app in web3',
+  title: 'SubTrade — Perfect solution for creating subscription-based app in web3',
   ignoreTitleTemplate: true,
 };
 ---
@@ -27,12 +26,12 @@ const metadata = {
         icon: 'tabler:mail-forward',
       },
       // TODO: demo page
-      { text: 'Demo', href: '#features' },
+      { text: 'Try the Demo', href: '#features' },
     ]}
   >
     <Fragment slot="title">
       Revolutionize Your Subscription Model with
-      <span class="text-accent dark:text-white highlight"> SubNFT </span>
+      <span class="text-primary highlight"> SubTrade </span>
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -40,26 +39,22 @@ const metadata = {
         Where <span class="font-semibold">ownership meets flexibility</span> - trade, sell, and buy subscription-based services
         like never before.
       </span>
-      Suitable for Startups, Small Business & Blogs.
+      Suitable for Startups & Small Business.
     </Fragment>
   </Hero>
-
-  <!-- Note Widget ******************* -->
-
-  <Note />
 
   <!-- Features Widget *************** -->
 
   <Features2
     id="features"
     tagline="Features"
-    title="What you get with SubNFT"
+    title="What you get with SubTrade"
     subtitle="Unlock the Simplicity and Potential of Crypto Commerce"
     items={[
       {
         title: 'Ease of Access',
         description:
-          'SubNFT simplifies the process of selling your services. With just a few clicks, you can tokenize your subscriptions, opening up a whole new revenue stream that taps into the crypto-savvy audience.',
+          'SubTrade simplifies the process of selling your services. With just a few clicks, you can tokenize your subscriptions, opening up a whole new revenue stream that taps into the crypto-savvy audience.',
         icon: 'tabler:rocket',
       },
       {
@@ -71,13 +66,13 @@ const metadata = {
       {
         title: 'Flexibility for Users',
         description:
-          "Life changes and so do the needs of your subscribers. SubNFT introduces an unprecedented level of flexibility, allowing users to sell their subscriptions if they decide to quit before the next cycle. This not only benefits the current user but also lowers the barrier for new users to try your service.",
+          "Life changes and so do the needs of your subscribers. SubTrade introduces an unprecedented level of flexibility, allowing users to sell their subscriptions if they decide to quit before the next cycle. This not only benefits the current user but also lowers the barrier for new users to try your service.",
         icon: 'tabler:arrows-right-left',
       },
       {
         title: 'Global Reach',
         description:
-          "Break down geographical barriers and connect with customers worldwide. SubNFT's integration with cryptocurrency means you can expand your services globally without the complexities of traditional currency exchange rates or banking fees.",
+          "Break down geographical barriers and connect with customers worldwide. SubTrade's integration with cryptocurrency means you can expand your services globally without the complexities of traditional currency exchange rates or banking fees.",
         icon: 'tabler:world-upload',
       },
       {
@@ -97,12 +92,12 @@ const metadata = {
 
   <FAQs
     title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that SubNFT offers and how it can elevate your product."
+    subtitle="Dive into the following questions to gain insights into the powerful features that SubTrade offers and how it can elevate your product."
     tagline="FAQs"
     classes={{ container: 'max-w-6xl' }}
     items={[
       {
-        title: 'Why SubNFT?',
+        title: 'Why SubTrade?',
         description:
           "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
       },

@@ -111,7 +111,7 @@ export const headerData = {
       ],
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
+  actions: [{ text: 'Try the Demo', href: '#', target: '_blank' }],
 };
 
 export const footerData = {
@@ -119,30 +119,26 @@ export const footerData = {
     {
       title: 'Product',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
-      ],
-    },
-    {
-      title: 'Platform',
-      links: [
-        { text: 'Developer API', href: '#' },
+        { text: 'APIs', href: '#' },
         { text: 'SDK', href: '#' },
+        { text: 'App', href: '#' },
       ],
     },
     {
-      title: 'Support',
+      title: 'Resources',
       links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
+        { text: 'Documentation', href: '#' },
+        { text: 'Pricing', href: '#' },
+        { text: 'Quick Start', href: '#' },
+      ],
+    },
+    {
+      title: 'Community',
+      links: [
+        { text: 'Twitter', href: 'https://twitter.com/SubnftX9439' },
+        { text: 'Discord', href: '#' },
+        { text: 'Github', href: 'https://github.com/SubNFT-xyz' },
+        { text: 'RSS', href: getAsset('/rss.xml') },
       ],
     },
     {
@@ -150,24 +146,8 @@ export const footerData = {
       links: [
         { text: 'About', href: '#' },
         { text: 'Blog', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
+        { text: 'Terms & Conditions', href: '#' },
       ],
     },
   ],
-  secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
-  ],
-  socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://twitter.com/SubnftX9439' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/SubNFT-xyz' },
-  ],
-  // TODO: change favicon
-  footNote: `
-    <span class="w-5 h-5 md:w-6 md:h-6 md:-mt-0.5 bg-cover mr-1.5 rtl:mr-0 rtl:ml-1.5 float-left rtl:float-right rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)]"></span>
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://onwidget.com/"> SubNFT</a> · All rights reserved.
-  `,
 };
