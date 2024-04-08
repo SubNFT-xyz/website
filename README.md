@@ -19,6 +19,8 @@
 
 📌 [https://trade.subnft.xyz/demo](https://trade.subnft.xyz/demo)
 
+<img src="src/assets/images/demo.png" alt="SubTrade Demo Screenshot" >
+
 <br>
 
 ## Getting started
