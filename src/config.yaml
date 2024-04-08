@@ -1,30 +1,30 @@
 site:
   name: SubTrade
-  site: 'https://astrowind.vercel.app'
+  site: 'https://trade.subnft.xyz/'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: z6TTIy4Fct6ay8vsqlm_Q1nPGs5ydpcA5cG5NIVbzts
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: SubTrade
+    template: '%s — SubTrade'
+  description: "\U0001F680 Trade, sell, and buy subscription-based services with the power of NFT."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: SubTrade
     images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+      - url: '~/assets/images/default1.png'
+        width: 1284
+        height: 855
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@SubnftX9439'
+    site: '@SubnftX9439'
     cardType: summary_large_image
 
 i18n:

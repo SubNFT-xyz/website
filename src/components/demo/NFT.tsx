@@ -65,17 +65,8 @@ function NFT() {
 
   return (
     <div className="flex flex-col justify-start items-center">
-      {/* Operation panel */}
-      <div className="flex flex-row items-center gap-2">
-        <Button onClick={toggleStart} className={btnClassDependEnable}>
-          {!running && <Play />}
-          {running && <Pause />}
-          <span className="ml-2">Time Machine</span>
-        </Button>
-      </div>
-      <span className="mt-4">Today: {dayjs(date).format('YYYY-MM-DD')}</span>
       {/* NFT Box */}
-      <div className="flex flex-col mt-8">
+      <div className="flex flex-col mb-8">
         <Price>
           <Progress value={remainPercent * 100} className="w-[60%] mb-4" />
           <CardFooter className="flex flex-row justify-between w-[60%]">
@@ -88,6 +79,15 @@ function NFT() {
           </CardFooter>
         </Price>
       </div>
+      {/* Operation panel */}
+      <div className="flex flex-row items-center gap-2">
+        <Button onClick={toggleStart} className={btnClassDependEnable}>
+          {!running && <Play />}
+          {running && <Pause />}
+          <span className="ml-2">Time Machine</span>
+        </Button>
+      </div>
+      <span className="mt-4">Today: {dayjs(date).format('YYYY-MM-DD')}</span>
     </div>
   );
 }
