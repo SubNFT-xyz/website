@@ -1,4 +1,6 @@
 import { Button } from '../ui/button';
+import { CardFooter } from '../ui/card';
+import Price from './Price';
 
 type Props = {
   onChange: () => void;
@@ -6,9 +8,12 @@ type Props = {
 
 function Mint({ onChange }: Props) {
   return (
-    <div className='flex flex-col items-center gap-4'>
-      Mint Box
-      <Button onClick={onChange}>Pay</Button>
+    <div className="flex flex-col items-center gap-4">
+      <Price>
+        <CardFooter>
+          <Button onClick={onChange}>Get Started</Button>
+        </CardFooter>
+      </Price>
     </div>
   );
 }

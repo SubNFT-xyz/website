@@ -1,37 +1,35 @@
 import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
-import { Play, Pause, RotateCcw, FastForward } from 'lucide-react';
+import { Play, Pause } from 'lucide-react';
 
 import { Button } from '../ui/button';
+import Price from './Price';
+import { Progress } from '../ui/progress';
+import { CardFooter } from '../ui/card';
 
-type Props = {
-  initRemainPercent: number; // 0.45
-};
-
-const period = 1; // day
-const fastPeriod = 15; //day
+const period = 10; //day
 const cycle = 365; // day
+const defaultInitRemainPercent = 0.3;
 
-function NFT({ initRemainPercent = 1 }: Props) {
+function NFT() {
   const [enable, setEnable] = useState(true);
-  const [startDate] = useState(dayjs());
-  const [remainPercent, setRemainPercent] = useState(initRemainPercent);
+  const [startDate, setStartDate] = useState(dayjs());
+  const [initRemainPercent, setInitRemainPercent] = useState(defaultInitRemainPercent);
+  const [remainPercent, setRemainPercent] = useState(defaultInitRemainPercent);
 
   const [running, setRunning] = useState(false);
-  const [isFast, setIsFast] = useState(false);
   const [date, setDate] = useState(dayjs());
 
   // update time according to speed and running
   useEffect(() => {
     let timerId;
-    const speed = isFast ? fastPeriod : period;
 
     const incrementDay = () => {
-      setDate((prevDate) => prevDate.add(speed, 'day'));
+      setDate((prevDate) => prevDate.add(period, 'day'));
     };
 
     if (running) {
-      timerId = setInterval(incrementDay, 1000);
+      timerId = setInterval(incrementDay, 300);
     } else {
       clearInterval(timerId);
     }
@@ -39,7 +37,7 @@ function NFT({ initRemainPercent = 1 }: Props) {
     return () => {
       clearInterval(timerId);
     };
-  }, [running, isFast]);
+  }, [running]);
 
   // calculate remain percent
   useEffect(() => {
@@ -53,47 +51,41 @@ function NFT({ initRemainPercent = 1 }: Props) {
     }
   }, [date]);
 
-  const txtRemainPercent = (remainPercent * 100).toFixed(0) + '%';
-  const txtRunning = running ? 'Running' : 'Freezed';
-
   const toggleStart = () => {
     setRunning((prev) => !prev);
   };
 
-  const toggleSpeed = () => {
-    setIsFast((prev) => !prev);
-  };
-
-  const handleReset = () => {
-    setRunning(false);
-    setIsFast(false);
-    setDate(dayjs());
+  const handleRenew = () => {
     setEnable(true);
-    setRemainPercent(initRemainPercent);
+    setStartDate(date);
+    setInitRemainPercent(1);
+    setRemainPercent(1);
   };
 
   return (
     <div className="flex flex-col justify-start items-center">
       {/* Operation panel */}
       <div className="flex flex-row items-center gap-2">
-        <Button variant="outline" size="icon" onClick={toggleStart}>
+        <Button onClick={toggleStart}>
           {!running && <Play />}
           {running && <Pause />}
-        </Button>
-        <Button variant="outline" size="icon" onClick={toggleSpeed}>
-          <FastForward />
-        </Button>
-        <Button variant="outline" size="icon" onClick={handleReset}>
-          <RotateCcw />
+          <span className="ml-2">Time Machine</span>
         </Button>
       </div>
+      <span className="mt-4">Now: {dayjs(date).format('YYYY-MM-DD')}</span>
       {/* NFT Box */}
-      <div className="flex flex-col mt-16">
-        <span>NFT box</span>
-        <span>Now: {dayjs(date).format('YYYY-MM-DD')}</span>
-        <span>{txtRemainPercent}</span>
-        <span>{txtRunning}</span>
-        {!enable && <div>用完了</div>}
+      <div className="flex flex-col mt-8">
+        <Price>
+          <Progress value={remainPercent * 100} className="w-[60%] mb-4" />
+          <CardFooter className="flex flex-row justify-between w-[60%]">
+            <Button className={!enable ? 'pointer-events-none opacity-50' : ''} variant="outline">
+              Resell
+            </Button>
+            <Button variant="outline" onClick={handleRenew}>
+              Renew
+            </Button>
+          </CardFooter>
+        </Price>
       </div>
     </div>
   );

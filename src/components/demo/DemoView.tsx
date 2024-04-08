@@ -18,7 +18,7 @@ export default function DemoView() {
         <FakeWallet />
       </div>
       {step == 0 && <Mint onChange={handleNextStep} />}
-      {step != 0 && <NFT initRemainPercent={0.45} />}
+      {step != 0 && <NFT />}
     </div>
   );
 }
