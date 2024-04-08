@@ -3,13 +3,13 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
-    "baseUrl": "/Users/neil/Code/subnft-proj/subnft-landing",
+    "baseUrl": ".",
     "paths": {
       "~/*": [
         "src/*"
-      ]
+      ],
     },
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js"
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

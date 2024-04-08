@@ -13,7 +13,7 @@ import {
   responsiveTablesRehypePlugin,
   lazyImagesRehypePlugin,
 } from './src/utils/frontmatter.mjs';
-import solidJs from '@astrojs/solid-js';
+import react from '@astrojs/react';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const hasExternalScripts = false;
 const whenExternalScripts = (items = []) =>
@@ -64,7 +64,7 @@ export default defineConfig({
       Logger: 1,
     }),
     astrowind(),
-    solidJs(),
+    react(),
   ],
   image: {
     service: squooshImageService(),
