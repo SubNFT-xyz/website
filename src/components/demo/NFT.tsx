@@ -62,12 +62,14 @@ function NFT() {
     setRemainPercent(1);
   };
   const btnClassDependEnable = !enable ? 'pointer-events-none opacity-50' : '';
+  const estimatedValue = '$' + (129 * remainPercent).toFixed(2);
 
   return (
     <div className="flex flex-col justify-start items-center">
       {/* NFT Box */}
       <div className="flex flex-col mb-8">
         <Price>
+          <span className='my-2'>Estimated Value: {estimatedValue}</span>
           <Progress value={remainPercent * 100} className="w-[60%] mb-4" />
           <CardFooter className="flex flex-row justify-between w-[60%]">
             <Button className={btnClassDependEnable} variant="outline">
