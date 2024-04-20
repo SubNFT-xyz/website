@@ -6,6 +6,7 @@ import { Button } from '../ui/button';
 import Price from './Price';
 import { Progress } from '../ui/progress';
 import { CardFooter } from '../ui/card';
+import { Checkbox } from '../ui/checkbox';
 
 const period = 10; //day
 const cycle = 365; // day
@@ -19,6 +20,8 @@ function NFT() {
 
   const [running, setRunning] = useState(false);
   const [date, setDate] = useState(dayjs());
+
+  const [autoRenew, setAutoRenew] = useState(true);
 
   // update time according to speed and running
   useEffect(() => {
@@ -46,8 +49,9 @@ function NFT() {
     const rawRemainPercent = (remainDays - diffDays) / cycle;
     setRemainPercent(rawRemainPercent < 0 ? 0 : rawRemainPercent);
     if (diffDays >= remainDays) {
-      setEnable(false);
-      setRunning(false);
+      // setEnable(false);
+      // setRunning(false);
+      handleRenew();
     }
   }, [date]);
 
@@ -55,7 +59,14 @@ function NFT() {
     setRunning((prev) => !prev);
   };
 
+  const handleAutoRenewChange = () => {
+    setAutoRenew((prev) => !prev);
+  };
+
   const handleRenew = () => {
+    if (!autoRenew) {
+      return;
+    }
     setEnable(true);
     setStartDate(date);
     setInitRemainPercent(1);
@@ -69,15 +80,21 @@ function NFT() {
       {/* NFT Box */}
       <div className="flex flex-col mb-8">
         <Price>
-          <span className='my-2'>Estimated Value: {estimatedValue}</span>
+          <span className="my-2">Estimated Value: {estimatedValue}</span>
           <Progress value={remainPercent * 100} className="w-[60%] mb-4" />
-          <CardFooter className="flex flex-row justify-between w-[60%]">
+          <CardFooter className="flex flex-row justify-between w-[80%]">
             <Button className={btnClassDependEnable} variant="outline">
               Resell
             </Button>
-            <Button variant="outline" onClick={handleRenew}>
-              Renew
-            </Button>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="auto-renew" checked={autoRenew} onCheckedChange={handleAutoRenewChange} />
+              <label
+                htmlFor="auto-renew"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Auto Renew
+              </label>
+            </div>
           </CardFooter>
         </Price>
       </div>
